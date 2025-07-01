@@ -11,6 +11,7 @@ on:
     paths:
       - '.github/workflows/classic-autogpt-ci.yml'
       - 'classic/original_autogpt/**'
+  workflow_dispatch:
 
 concurrency:
   group: ${{ format('classic-autogpt-ci-{0}', github.head_ref && format('{0}-{1}', github.event_name, github.event.pull_request.number) || github.sha) }}
